@@ -17,7 +17,7 @@ const insertionSort = (tempArray) => {
             break;
         }
     }
-    console.log('j',j);
+    console.log('i, j+1',i,j+1);
     sortedArray[j+1] = NTI;
     console.log('i: ',i,sortedArray)
   }  
