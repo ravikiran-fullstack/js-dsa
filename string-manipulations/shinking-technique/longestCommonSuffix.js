@@ -1,24 +1,22 @@
-const longestCommonPrefix = (strs) => {
-  if (strs.length === 0) {
-    return "";
-  }
-
-  let prefix = strs[0];
-
-  for (let i = 0; i < strs.length; i++) {
-    while (strs[i].indexOf(prefix) !== 0) {
-      prefix = prefix.slice(0, -1);
-
-      if (prefix === "") {
+const longestCommonSuffix = (strs) => {
+    if(strs.length === 0){
         return "";
-      }
     }
-  }
 
-  return prefix;
-};
+    let suffix = strs[0];
 
-console.log(longestCommonPrefix(["flower", "flow", "flight"]));
-console.log(longestCommonPrefix(["reflower", "flow", "flight"]));
-console.log(longestCommonPrefix(["dog", "racecar", "car"]));
-console.log(longestCommonPrefix(["cir", "car"]));
+    for(let i = 1; i < strs.length; i++){
+        while(!strs[i].endsWith(suffix)){
+        //while(strs[i].indexOf(suffix) < 0 ){
+            suffix = suffix.slice(1);
+            
+            if(suffix.length === 0){
+                return ""
+            }
+        }
+    }
+
+    return suffix;
+}
+
+console.log(longestCommonSuffix(["running", "jogging", "swing"]));
